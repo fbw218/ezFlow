@@ -1,0 +1,13 @@
+{
+  "name": "node-web-scrape",
+  "version": "0.0.1",
+  "description": "Get Course Listings",
+  "main": "webScraper.js",
+  "author": "Nate Gyory",
+  "dependencies": {
+    "cheerio": "latest",
+    "express": "latest",
+    "jsonfile": "^2.4.0",
+    "request": "latest"
+  }
+}

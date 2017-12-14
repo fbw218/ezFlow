@@ -1,0 +1,259 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ezFlow</title>
+    <link rel="stylesheet" href="./public/CSS/main.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+    <script src="./public/JS/main.js"></script>
+    <script src="./public/JS/adminMT.js"></script>
+    <script src="./public/JS/admin.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="header">
+            <div class="col-sm-3">
+                <a href="./adminmenu.html">
+                    <p id="websitetitle">ezFlow</p>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <p id="pagetitle">Create or Edit Major</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="text-right"><a class="titlelink" href="./adminlogin.html">Log Out</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="./adminmenu.html">Menu</a></li>
+                <li><a href="./adminviewchart.html">Preview Chart</a></li>
+                <li><a href="./admincourselisting.html">Edit Courses</a></li>
+                <li class="active"><a href="#">Create or Edit Major</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <!-- BUTTONS -->
+        <div class="row btnbar">
+            <div class="col-sm-4">
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newtrackpopup">Create New Major Track</button> or
+                <select onchange="majorSelected()" id="MajorsDropDown" class="selectpicker" title="Select Major...">
+                    <option>Computer Science</option>
+                    <option>Computer Science and Business</option>
+                    <option>Math</option>
+                </select>
+            </div>
+            <!--<div class="col-sm-8 ">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#manualentrypopup">
+                    Add New Course
+                </button>
+            </div>-->
+        </div>
+
+        <!--Manual Course Entry popup-->
+        <div class="modal fade" id="newtrackpopup" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel-heading">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h2 class="modal-title" id="myModalLabel">Manual Course Entry</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="majortracknameinput">Major Name:</label>
+                                <input type="text" class="form-control" id="majortracknameinput" placeholder="Computer Science">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Submit</button>
+
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Maual Course Entry Popup -->
+
+        <!--Manual Course Entry popup-->
+        <div class="modal fade" id="manualentrypopup" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel-heading">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h2 class="modal-title" id="myModalLabel">Manual Course Entry</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="courseidinput">Course ID:</label>
+                                <input type="text" class="form-control" id="courseidinput" placeholder="CSE017">
+                            </div>
+                            <div class="form-group">
+                                <label for="nameinput">Name:</label>
+                                <input type="text" class="form-control" id="nameinput" placeholder="Programming and Data Structures">
+                            </div>
+                            <div class="form-group">
+                                <label for="coursedescription">Description:</label>
+                                <input class="form-control" id="coursedescription" placeholder="Learn about data structures, programming...">
+                            </div>
+                            <div class="form-group">
+                                <label for="creditsinput">Credits:</label>
+                                <input type="number" class="form-control" id="creditsinput" placeholder="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="courselinkinput">Link:</label>
+                                <input type="url" class="form-control" id="courselinkinput" placeholder="www.facebook.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="prereqinput">Prerequisites (separated by commas):</label>
+                                <input type="text" class="form-control" id="prereqinput" placeholder="CSE001, CSE002">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Submit</button>
+
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Maual Course Entry Popup -->
+
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading panel-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Courses in Major
+                        </div>
+                        <div class="col-sm-6">
+                            Add From Course Listing
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-body panel500">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-primary" id="saveMajorButton">Save</button>
+                        </div>
+                        <div class="input-group col-sm-4">
+                            <input id="searchCoursesText" type="text" class="form-control" placeholder="Search Courses...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> Search
+                            </button>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <ul id="majorCourseList" class="list-group">
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <ul class="list-group" id="adminCourseList">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer"></div>
+
+        </div>
+    </div>
+
+    <!--Wrapper for Content
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading panel-title">
+                    Courses in Major
+                </div>
+
+                <div class="panel-body panel500">
+                    <ul id="majorCourseList" class="list-group col-sm-12">
+
+                    </ul>
+                </div>
+                <div class="panel-footer"></div>
+
+            </div>
+        </div>
+
+        <div class="col-sm-1">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <button id="moveButtonAdd" type="button" class="btn btn-secondary">
+                        <span class="glyphicon glyphicon-arrow-left"></span> Add
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <button id="moveButtonRemove" type="button" class="btn btn-secondary">
+                        Remove <span class="glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading panel-title">
+                    Add From Course Listing
+                </div>
+                <div class="panel-body panel500">
+                    <div class="input-group">
+                        <input id="searchCoursesText" type="text" class="form-control" placeholder="Search Courses...">
+                        <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                        </span>
+                    </div>
+                    <ul class="list-group col-sm-12" id="adminCourseList">
+                    </ul>
+                </div>
+                <div class="panel-footer"></div>
+
+            </div>
+        </div>
+    </div>-->
+    </div>
+</body>
+
+</html>

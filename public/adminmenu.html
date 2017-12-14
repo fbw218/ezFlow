@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ezFlow</title>
+    <link rel="stylesheet" href="./public/CSS/main.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="header">
+            <div class="col-sm-3">
+                <a href="./adminmenu.html">
+                    <p id="websitetitle">ezFlow</p>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <p id="pagetitle">Menu</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="text-right"><a class="titlelink" href="./adminlogin.html">Log Out</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Menu</a></li>
+            <li><a href="./adminviewchart.html">Preview Chart</a></li>
+            <li><a href="./admincourselisting.html">Edit Courses</a></li>
+            <li><a href="./adminmajortrack.html">Create or Edit Major</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <!--Wrapper for Content-->
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                <div class="panel panel-primary adminpanel">
+                    <div class="panel-heading panel-title">
+                        Admin Pages
+                    </div>
+
+                    <div class="panel-body"> 
+
+                        <div class="list-group">
+                        <a href="./adminviewchart.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">Preview Chart</h4>
+                            </div>
+                            <p class="mb-1">View the chart(s) you have created so you can see how they will be displayed. </p>
+                        </a>
+                        <a href="./admincourselisting.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">Edit Courses</h4>
+                            </div>
+                            <p class="mb-1">View exisitng courses in your school's catalog. Upload a new course catalog or manually enter a course. </p>
+                        </a>
+                        <a href="./adminmajortrack.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">Create or Edit Major</h4>
+                            </div>
+                            <p class="mb-1">Create a chart for a major using courses listed in the database. </p>
+                        </a>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer"></div>
+
+                </div>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>
