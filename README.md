@@ -1,6 +1,6 @@
 # README #
 
-This is the repository for our independent study focused on creating a website to help students plan out their classes over their time in college.
+* This is the repository for our independent study focused on creating a website to help students plan out their classes over their time in college.
 
 * Website to generate, view, and keep track of prerequisite flowcharts for various majors. 
 
@@ -13,7 +13,9 @@ This is the repository for our independent study focused on creating a website t
 
 * Clone ezFlow repo into a local directory
 * 'npm install'
-* Run the webscraper in order to populate the SQL database
+* Create an empty SQL database by running the commands in 'blankDBscript.sql'
+* Run the webscraper in order to populate your SQL database
+* Redirect the Database Manager to point at your SQL database instance
 * Start the server by using the 'run.sh' script
 * Navigate to 'localhost:3333' 
 
